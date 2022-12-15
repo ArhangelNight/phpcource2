@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e11a3e30-9e0d-4799-bb15-ddd4bc0e52ed" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/aura/sqlquery" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/contracts" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/support" />
+      <path value="$PROJECT_DIR$/vendor/league/plates" />
+      <path value="$PROJECT_DIR$/vendor/kint-php/kint" />
+      <path value="$PROJECT_DIR$/vendor/tamtamchik/simple-flash" />
+      <path value="$PROJECT_DIR$/vendor/nikic/fast-route" />
+      <path value="$PROJECT_DIR$/vendor/delight-im/auth" />
+      <path value="$PROJECT_DIR$/vendor/delight-im/base64" />
+      <path value="$PROJECT_DIR$/vendor/delight-im/cookie" />
+      <path value="$PROJECT_DIR$/vendor/delight-im/db" />
+      <path value="$PROJECT_DIR$/vendor/delight-im/http" />
+      <path value="$PROJECT_DIR$/vendor/jeremeamia/superclosure" />
+      <path value="$PROJECT_DIR$/vendor/php-di/invoker" />
+      <path value="$PROJECT_DIR$/vendor/php-di/php-di" />
+      <path value="$PROJECT_DIR$/vendor/php-di/phpdoc-reader" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="2GjAAAiWvTH7btNl19uuewbYH52" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/views/admin/admin-users.php" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/app/views/admin/admin-users.php" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Open Server 5.3.5\OSPanel\domains\phpcource2\app\views\admin" />
+      <recent name="C:\Open Server 5.3.5\OSPanel\domains\phpcource2\app\controllers" />
+      <recent name="C:\Open Server 5.3.5\OSPanel\domains\phpcource2\app\model" />
+      <recent name="C:\Open Server 5.3.5\OSPanel\domains\phpcource2\app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Open Server 5.3.5\OSPanel\domains\phpcource2\app\views" />
+      <recent name="C:\Open Server 5.3.5\OSPanel\domains\phpcource2\app\views\admin" />
+      <recent name="C:\Open Server 5.3.5\OSPanel\domains\phpcource2\app\controllers" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e11a3e30-9e0d-4799-bb15-ddd4bc0e52ed" name="Default Changelist" comment="" />
+      <created>1666891473439</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666891473439</updated>
+      <workItem from="1666891474959" duration="626000" />
+      <workItem from="1666981846655" duration="7244000" />
+      <workItem from="1667246316659" duration="4756000" />
+      <workItem from="1667326390212" duration="3279000" />
+      <workItem from="1667411064631" duration="1415000" />
+      <workItem from="1667498157245" duration="612000" />
+      <workItem from="1667588452464" duration="5612000" />
+      <workItem from="1667842809285" duration="4228000" />
+      <workItem from="1668018656702" duration="4306000" />
+      <workItem from="1668097297952" duration="3314000" />
+      <workItem from="1668193739816" duration="2258000" />
+      <workItem from="1668622138689" duration="16000" />
+      <workItem from="1668622165142" duration="4971000" />
+      <workItem from="1668710340516" duration="3118000" />
+      <workItem from="1668868815921" duration="6246000" />
+      <workItem from="1669050779486" duration="8551000" />
+      <workItem from="1669133203338" duration="9568000" />
+      <workItem from="1669467011572" duration="8885000" />
+      <workItem from="1669672056157" duration="2187000" />
+      <workItem from="1669908465470" duration="7427000" />
+      <workItem from="1669984784426" duration="649000" />
+      <workItem from="1669997504021" duration="8622000" />
+      <workItem from="1670257611838" duration="6186000" />
+      <workItem from="1670356919810" duration="84000" />
+      <workItem from="1670357015369" duration="4282000" />
+      <workItem from="1670421406247" duration="986000" />
+      <workItem from="1670438237475" duration="7132000" />
+      <workItem from="1670523752755" duration="5778000" />
+      <workItem from="1670606612286" duration="7860000" />
+      <workItem from="1670847680488" duration="11000" />
+      <workItem from="1670847701556" duration="10063000" />
+      <workItem from="1670952374478" duration="5307000" />
+      <workItem from="1671042832999" duration="5177000" />
+      <workItem from="1671127718086" duration="5240000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
