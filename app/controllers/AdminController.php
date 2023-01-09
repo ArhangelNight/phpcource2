@@ -4,6 +4,7 @@ namespace App\controllers;
 
 use App\models\User;
 use Delight\Auth\Auth;
+use JasonGrimes\Paginator;
 use League\Plates\Engine;
 use App\models\Category;
 use App\models\Post;
@@ -38,9 +39,16 @@ class AdminController
     public function postControl()
     {
         if ( $this->auth->hasRole(\Delight\Auth\Role::ADMIN)) {
-            $posts = $this->post->getPosts();
+            $per_page = 10;
+            $page = $_GET['page'] ? $_GET['page'] : 1;
+            $urlPattern = '?page=(:num)';
+            $totalPosts = count($this->post->getPosts());
 
-            echo $this->templates->render('admin/admin-posts', ['posts' => $posts]);
+            $posts = $this->post->getPostsPerPage($per_page, $page);
+
+            $paginator = new Paginator($totalPosts, $per_page, $page, $urlPattern);
+
+            echo $this->templates->render('admin/admin-posts', ['posts' => $posts, 'paginator' => $paginator]);
         }else{
             header('Location: /');
             die;
@@ -74,8 +82,15 @@ class AdminController
     public function userPosts($id)
     {
         if ( $this->auth->hasRole(\Delight\Auth\Role::ADMIN)) {
-            $userPosts = $this->post->userPosts($id);
-            echo $this->templates->render('user/user-posts', ['posts' => $userPosts]);
+            $per_page = 3;
+            $page = $_GET['page'] ? $_GET['page'] : 1;
+            $urlPattern = '?page=(:num)';
+            $totalPosts = count($this->post->userPosts($id));
+
+            $userPosts = $this->post->userPostsPerPage($id, $per_page, $page);
+            $paginator = new Paginator($totalPosts, $per_page, $page, $urlPattern);
+
+            echo $this->templates->render('user/user-posts', ['posts' => $userPosts, 'paginator' => $paginator]);
         }else{
             header('Location: /');
             die;

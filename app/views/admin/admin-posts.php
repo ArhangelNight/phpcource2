@@ -43,6 +43,7 @@ $this->layout('layout',['title' => 'Postspanel']);
            
           </tbody>
         </table>
+          <?php $this->insert('/blocks/pagination', ['paginator' => $paginator]); ?>
     </div>
   </div>
 </div>

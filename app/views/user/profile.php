@@ -9,19 +9,19 @@ $this->layout('layout',['title' => 'My profile']);
     <br>
     <div class="row ">
         <div class="col-md-auto">
-            <!-- --><?/*
+             <?
                if(!empty($user['avatar'])){
-                  echo '<img src="/../uploads/'.$user['avatar'].'" alt="..." class="img-thumbnail" width="200px">';
+                  echo '<img src="/../uploads/'.$user['avatar'].'" alt="..." class="rounded-circle img-thumbnail" width="200px">';
                  }
                 else{
                 echo '<img src="/../img/default_user_photo.jpg" alt="..." class="rounded-circle img-thumbnail" width="200px">';
                   }
-              */?>
+              ?>
 
-            <form action="/edit_avatar" method="POST" enctype="multipart/form-data">
+            <form action="/edit-avatar/<?=  $user['id'] ?>" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <input name="avatar" type="file" required>
-                    <input type="hidden" name="oldImage" value="<?echo $user['avatar']?>">
+                    <input type="hidden" name="oldAvatar" value="<?echo $user['avatar']?>">
                 </div>
                 <br><br>
                 <button type="submit" class="btn btn-primary btn-sm">Update photo<i class="fa fa-camera ml-2"></i></button>

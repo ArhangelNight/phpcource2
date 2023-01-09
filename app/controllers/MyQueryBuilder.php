@@ -90,6 +90,7 @@ class MyQueryBuilder {
         $sth->execute($delete->getBindValues());
 
     }
+
     public function getOnePost($id){
         $select = $this->queryFactory->newSelect();
         $select->cols(['p.*','c.name'])
@@ -106,6 +107,7 @@ class MyQueryBuilder {
 
         return $sth->fetch(PDO::FETCH_ASSOC);
     }
+
     function getAllPosts() {
         $select = $this->queryFactory->newSelect();
         $select->cols(['p.*','c.name'])
@@ -122,6 +124,26 @@ class MyQueryBuilder {
         return $sth->fetchAll(PDO::FETCH_ASSOC);
 
     }
+
+    function getPostsByPage($per_page = 3, $page = 1) {
+        $select = $this->queryFactory->newSelect();
+        $select->cols(['p.*','c.name'])
+            ->from('posts as p')
+            ->setPaging($per_page)
+            ->page($page)
+            ->join(
+                'LEFT',
+                'categories AS c',
+                'p.category_id = c.id');
+
+        $sth = $this->pdo->prepare($select->getStatement());
+
+        $sth->execute($select->getBindValues());
+
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
     public function getAllPostsByCategory($id)
     {
         $select = $this->queryFactory->newSelect();
@@ -132,6 +154,25 @@ class MyQueryBuilder {
                 'categories AS c',
                 'p.category_id = c.id')
             ->where("p.category_id = :id")
+            ->bindValue('id', $id);
+        $sth = $this->pdo->prepare($select->getStatement());
+        $sth->execute($select->getBindValues());
+
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getAllPostsByCategoryByPage($id, $per_page = 3, $page = 1)
+    {
+        $select = $this->queryFactory->newSelect();
+        $select->cols(['p.*','c.name'])
+            ->from('posts as p')
+            ->join(
+                'INNER',
+                'categories AS c',
+                'p.category_id = c.id')
+            ->where("p.category_id = :id")
+            ->setPaging($per_page)
+            ->page($page)
             ->bindValue('id', $id);
         $sth = $this->pdo->prepare($select->getStatement());
         $sth->execute($select->getBindValues());
@@ -155,4 +196,56 @@ class MyQueryBuilder {
 
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getAllPostsByUserByPage($id, $per_page = 3, $page = 1)
+    {
+        $select = $this->queryFactory->newSelect();
+        $select->cols(['p.*','c.name'])
+            ->from('posts as p')
+            ->join(
+                'LEFT',
+                'categories AS c',
+                'p.category_id = c.id')
+            ->where("p.user_id = :id")
+            ->setPaging($per_page)
+            ->page($page)
+            ->bindValue('id', $id);
+        $sth = $this->pdo->prepare($select->getStatement());
+        $sth->execute($select->getBindValues());
+
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getUserAvatar($id)
+    {
+        $select = $this->queryFactory->newSelect();
+
+        $select->cols(['avatar'])
+            ->from('users')
+            ->where('id = :id')
+            ->bindValue('id', $id);
+
+        $sth = $this->pdo->prepare($select->getStatement());
+
+        $sth->execute($select->getBindValues());
+
+        return $sth->fetch(PDO::PARAM_STR);
+    }
+
+    public function updateAvatar($imgPath, $id)
+    {
+        $update = $this->queryFactory->newUpdate();
+
+        $update
+            ->table('users')                  // update this table
+            ->cols(['avatar'=>$imgPath])
+            ->where('id = :id')
+            ->bindValue('id', $id);
+
+        $sth = $this->pdo->prepare($update->getStatement());
+
+        $sth->execute($update->getBindValues());
+    }
+
+
 }

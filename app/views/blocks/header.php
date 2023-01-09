@@ -1,98 +1,101 @@
-<?php
-/*use App\Model\Category;
-$categories=Category::getCategories();
-*/?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title><?=$this->e($title)?></title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/mdb.min.css" rel="stylesheet">
-  <link href="/css/style.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title><?=$this->e($title)?></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/mdb.min.css" rel="stylesheet">
+    <link href="/css/style.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <header>
+<header>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light white scrolling-navbar">
-      <div class="container">
+        <div class="container">
 
-        <a class="navbar-brand waves-effect" href="/" >
-          <strong class="blue-text">My Blog</strong>
-        </a>
+            <a class="navbar-brand waves-effect" href="/" >
+                <strong class="blue-text">My Blog</strong>
+            </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-          <ul class="navbar-nav mr-auto">
-           
-     
-            <li class="nav-item">
-              <a class="nav-link" href="/">Homepage</a>
-            </li>
+                <ul class="navbar-nav mr-auto">
 
-            <li class="nav-item">
-              <a class="nav-link" href="/about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/">All Posts</a>
-            </li>
 
-           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-            Categories</a>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-           <!-- <?php /*foreach($categories as $category):*/?>
-            <a class="dropdown-item" href="/category-posts/<?/*= $category['id'];*/?>"><?php /*echo $category['category_name'];*/?></a>
-            --><?php /*endforeach;*/?>
-          </div>
-        </li>
-          </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Homepage</a>
+                    </li>
 
-          <ul class="navbar-nav nav-flex-icons ">
-            <li class="nav-item">
-              <a href="https://www.facebook.com" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="https://github.com/ArhangelNight" class="nav-link border border-light rounded waves-effect"
-                target="_blank">
-                <i class="fab fa-github mr-2"></i>Sergey GitHub
-              </a>
-            </li>
-            <li class="nav-item">
-            <a class="btn btn-outline-info ml-4 " href="/admin">Admin Panel</a>
-            </li>
-            <li class="nav-item">
-            <a class="btn btn-outline-info ml-4 " href="/logout">Logout</a>
-            </li>
-          </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">All Posts</a>
+                    </li>
+
+<!--                    <li class="nav-item dropdown">-->
+<!--                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"-->
+<!--                           aria-haspopup="true" aria-expanded="false">-->
+<!--                            Categories</a>-->
+<!--                        </button>-->
+<!--                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
+<!--                             --><?php //foreach($categories as $category):?>
+<!--            <a class="dropdown-item" href="/category-posts/--><?//= $category['id'];?><!--">--><?php //echo $category['category_name'];?><!--</a>-->
+<!--            --><?php //endforeach;?>
+<!--                        </div>-->
+<!--                    </li>-->
+                </ul>
+
+                <ul class="navbar-nav nav-flex-icons ">
+                    <li class="nav-item">
+                        <a href="https://www.facebook.com" class="nav-link waves-effect" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link waves-effect" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://github.com/ArhangelNight" class="nav-link border border-light rounded waves-effect"
+                           target="_blank">
+                            <i class="fab fa-github mr-2"></i>Sergey GitHub
+                        </a>
+                    </li>
+                    <?php if($_SESSION['_internal_user_info']['user_role'] == 1): ?>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-info ml-4 " href="/admin">Admin Panel</a>
+                        </li>
+                    <?php endif;?>
+                    <?php if(!isset($_SESSION['_internal_user_info']['user_name'])): ?>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-info ml-4 " href="/login">Login</a>
+                        </li>
+                    <?php else: ?>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-info ml-4 " href="/logout">Logout</a>
+                    </li>
+                    <?php endif;?>
+                </ul>
+
+            </div>
 
         </div>
-
-      </div>
     </nav>
     <!-- Navbar -->
 
-  </header>
+</header>
   

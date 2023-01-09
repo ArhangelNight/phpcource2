@@ -47,4 +47,32 @@ class User
         }
     }
 
+    public function getUserAvatar($id)
+    {
+        return $this->db->getUserAvatar($id);
+    }
+
+    public function updateAvatar($oldAvatar, $avatarFile, $id)
+    {
+        if(!empty($avatarFile['tmp_name']))
+        {
+            $imageManager = new ImageManager();
+            $filename = $imageManager->uploadImage($avatarFile, 'avatar-imgs');
+            $imageManager->deleteImage($oldAvatar);
+
+            $isImg=Validator::imgEmpty($filename);
+            if ($isImg === false) {
+                $this->db->update('users', [
+                    'avatar' => $filename
+                ], $id);
+
+                flash()->success('Аватар успешно сохранен');
+            }else{
+                flash()->error($isImg);
+            }
+            header("Location: {$_SERVER['HTTP_REFERER']}");
+            exit;
+        }
+    }
+
 }

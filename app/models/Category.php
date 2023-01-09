@@ -32,6 +32,12 @@ class Category
         return $this->db->getAllPostsByCategory($id);
     }
 
+    public function getCategoryPostsPerPage($id, $per_page, $page)
+    {
+        return $this->db->getAllPostsByCategoryByPage($id, $per_page, $page);
+    }
+
+
     public function create($data, $img)
     {
         $cleanData = Validator::clean($data);

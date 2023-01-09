@@ -13,11 +13,11 @@ $this->layout('layout',['title' => 'Authorization']);
         <div class="form-group my-3">
             <input type="password" class="form-control" placeholder="Password" name="password" required>
         </div>
-        <div class="form-group form-check">
+       <!-- <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" name="remember">
             <label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
-        </div>
-        <button class="btn btn-lg btn-outline-primary btn-block" type="submit">Login</button>
+        </div>-->
+        <button class="btn btn-lg btn-outline-primary btn-block mb-3" type="submit">Login</button>
         <a href="/register" >Registration</a>
         <p class="mt-5 mb-3 text-muted">&copy; <?=date('Y') ?></p>
       </form>

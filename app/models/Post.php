@@ -22,6 +22,11 @@ class Post
         return $this->db->getAllPosts();
     }
 
+    public function getPostsPerPage($per_page, $page)
+    {
+        return $this->db->getPostsByPage($per_page, $page);
+    }
+
     public function getPost($id)
     {
         return $this->db->getOnePost($id);
@@ -119,6 +124,11 @@ class Post
     public function userPosts($userId)
     {
         return $this->db->getAllPostsByUser($userId);
+    }
+
+    public function userPostsPerPage($id, $per_page, $page)
+    {
+        return $this->db->getAllPostsByUserByPage($id, $per_page, $page);
     }
 
 }

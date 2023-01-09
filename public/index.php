@@ -52,6 +52,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('POST', '/change-profile/{id:\d+}', ['App\controllers\UserController' , 'updateUserProfile']);
     $r->addRoute('GET', '/edit-password/{id:\d+}', ['App\controllers\UserController' , 'editPassword']);
     $r->addRoute('POST', '/update-password/{id:\d+}', ['App\controllers\UserController' , 'updatePassword']);
+    $r->addRoute('POST', '/edit-avatar/{id:\d+}', ['App\controllers\UserController' , 'editAvatar']);
 
 
 

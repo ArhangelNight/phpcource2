@@ -20,7 +20,7 @@ $this->layout('layout',['title' => 'Registration']);
             <input type="password" class="form-control" placeholder="Password" name="password" required>
         </div>
 
-        <button class="btn btn-lg btn-outline-primary btn-block" type="submit">Register</button>
+        <button class="btn btn-lg btn-outline-primary btn-block mb-3" type="submit">Register</button>
         <a href="/login">Login</a>
     </div>
 </div>

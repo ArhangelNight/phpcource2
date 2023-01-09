@@ -50,6 +50,7 @@
       <path value="$PROJECT_DIR$/vendor/php-di/php-di" />
       <path value="$PROJECT_DIR$/vendor/php-di/phpdoc-reader" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/jasongrimes/paginator" />
     </include_path>
   </component>
   <component name="ProjectId" id="2GjAAAiWvTH7btNl19uuewbYH52" />
@@ -120,7 +121,14 @@
       <workItem from="1670847701556" duration="10063000" />
       <workItem from="1670952374478" duration="5307000" />
       <workItem from="1671042832999" duration="5177000" />
-      <workItem from="1671127718086" duration="5240000" />
+      <workItem from="1671127718086" duration="5971000" />
+      <workItem from="1672076666790" duration="6503000" />
+      <workItem from="1672669361790" duration="4854000" />
+      <workItem from="1672676351959" duration="5238000" />
+      <workItem from="1672772780874" duration="1802000" />
+      <workItem from="1672853992085" duration="19000" />
+      <workItem from="1672854021932" duration="7724000" />
+      <workItem from="1672944396197" duration="3078000" />
     </task>
     <servers />
   </component>

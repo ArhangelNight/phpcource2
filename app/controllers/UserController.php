@@ -8,6 +8,7 @@ namespace App\controllers;
 use App\models\Post;
 use App\models\User;
 use Delight\Auth\Auth;
+use JasonGrimes\Paginator;
 use League\Plates\Engine;
 
 class UserController
@@ -28,8 +29,15 @@ class UserController
     public function userPosts()
     {
         $userId = $this->auth->getUserId();
-        $userPosts = $this->post->userPosts($userId);
-        echo $this->templates->render('user/user-posts', ['posts' => $userPosts]);
+        $per_page = 3;
+        $page = $_GET['page'] ? $_GET['page'] : 1;
+        $urlPattern = '?page=(:num)';
+        $totalPosts = count($this->post->userPosts($userId));
+
+        $userPosts = $this->post->userPostsPerPage($userId, $per_page, $page);
+        $paginator = new Paginator($totalPosts, $per_page, $page, $urlPattern);
+
+        echo $this->templates->render('user/user-posts', ['posts' => $userPosts, 'paginator' => $paginator]);
     }
 
     public function userProfile()
@@ -102,7 +110,8 @@ class UserController
         }
     }
 
-
-
-
+    public function editAvatar($id)
+    {
+        $this->user->updateAvatar($_POST['oldAvatar'], $_FILES['avatar'], $id);
+    }
 }

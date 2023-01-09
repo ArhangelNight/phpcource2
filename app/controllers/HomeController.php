@@ -4,6 +4,7 @@ namespace App\controllers;
 
 use App\models\Category;
 use Delight\Auth\Auth;
+use JasonGrimes\Paginator;
 use League\Plates\Engine;
 use App\models\Post;
 
@@ -26,11 +27,17 @@ class HomeController {
 
     public function index()
     {
-        //var_dump($this->auth->getEmail());die;
-        $posts = $this->post->getPosts();
+        $per_page = 3;
+        $page = $_GET['page'] ? $_GET['page'] : 1;
+        $urlPattern = '?page=(:num)';
+        $totalPosts = count($this->post->getPosts());
+
+        $posts = $this->post->getPostsPerPage($per_page, $page);
         $categories = $this->category->getCategories();
 
-        echo $this->templates->render('home-page', ['posts' => $posts, 'categories' => $categories, 'postsPage' => 'All Posts']);
+        $paginator = new Paginator($totalPosts, $per_page, $page, $urlPattern);
+
+        echo $this->templates->render('home-page', ['posts' => $posts, 'categories' => $categories, 'postsPage' => 'All Posts', 'paginator' => $paginator]);
 
     }
 
@@ -48,9 +55,17 @@ class HomeController {
 
     public function categoryPosts($id)
     {
-        $posts = $this->category->getCategoryPosts($id);
+        $per_page = 3;
+        $page = $_GET['page'] ? $_GET['page'] : 1;
+        $urlPattern = '?page=(:num)';
+        $totalPosts = count($this->category->getCategoryPosts($id));
+
+        $posts = $this->category->getCategoryPostsPerPage($id, $per_page, $page);
         $categories = $this->category->getCategories();
-        echo $this->templates->render('home-page', ['posts' => $posts, 'postsPage' => 'Posts By Category', 'categories' => $categories]);
+
+        $paginator = new Paginator($totalPosts, $per_page, $page, $urlPattern);
+
+        echo $this->templates->render('home-page', ['posts' => $posts, 'postsPage' => 'Posts By Category', 'categories' => $categories, 'paginator' => $paginator]);
     }
 
 }

@@ -187,6 +187,16 @@ class ComposerStaticInit55747fcce5eb157636fc5c6ea852bd3a
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'J' => 
+        array (
+            'JasonGrimes' => 
+            array (
+                0 => __DIR__ . '/..' . '/jasongrimes/paginator/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
@@ -200,6 +210,7 @@ class ComposerStaticInit55747fcce5eb157636fc5c6ea852bd3a
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit55747fcce5eb157636fc5c6ea852bd3a::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit55747fcce5eb157636fc5c6ea852bd3a::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit55747fcce5eb157636fc5c6ea852bd3a::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit55747fcce5eb157636fc5c6ea852bd3a::$classMap;
 
         }, null, ClassLoader::class);
